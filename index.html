@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Furniture Store</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f1f1f1;
+        }
+
+        header {
+            background: #333;                                                
+            color: white;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 20%;
+            max-width: 150px; 
+            height: auto; 
+            margin: 0; 
+            display: block;
+            float: left; 
+            padding-right: 20px; 
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: rgb(237, 11, 11);
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #a7844f;
+        }
+
+        .hero {
+            background-image: url('va.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 200vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 30px 0;
+            display: none;
+        }
+
+        section.active {
+            display: block; 
+        }
+
+        h2 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2em;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .product {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product 
+ img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product h3 {
+            margin: 10px;
+            font-size: 1.2em;
+        }
+
+        .product p {
+            margin: 0 10px 10px;
+            color: #666;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .about-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .about-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .about-card img {
+            width: 100%; 
+            height: auto; 
+            max-width: 250px; 
+            margin: 0 auto 15px; 
+        }
+
+        .about-card h3 {
+            margin-bottom: 10px; 
+        }
+
+        .content-placeholder {
+            text-align: center;
+        }
+
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+  </style>
+</head>
+<body>
+<header>
+    <img src="logo.jpg" alt="Cozy Corner Furniture Logo" class="logo">
+    <h1>Furniture Store</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about-us">About Us</a>
+        <a href="#contact-us">Contact Us</a>
+        <a href="#locate-us">Locate Us</a>
+    </nav>
+</header>
+<div class="hero">
+    <h1>Discover Elegant Furniture</h1>
+    <p>Quality pieces that fit your style.</p>
+    <p>Transform your living space into a sanctuary of comfort and sophistication. Explore our exclusive collection and find the perfect statement pieces that reflect your unique taste. Enjoy special discounts and free shipping on your first order!</p>
+</div>
+<nav>
+    <a href="#sofas">Sofas</a> | <a href="#armchairs">Armchairs</a> | <a href="#tables">Tables</a> | <a href="#chairs">Chairs</a> | <a href="#beds">Beds</a> | <a href="#wardrobes">Wardrobes</a> | <a href="#dining-sets">Dining Sets</a> | <a href="#living-sets">Living Sets</a> | <a href="#kitchen-sets">Kitchen Sets</a> | <a href="#office-sets">Office Sets</a> | <a href="#kids-sets">Kids Sets</a> | <a href="#outdoor-sets">Outdoor Sets</a> | <a href="#bedroom-sets">Bedroom Sets</a> | <a href="#bathroom-sets">Bathroom Sets</a> | <a href="#living-room-sets">Living Room Sets</a> | <a href="#dining-room-sets">Dining Room Sets</a>
+</nav>
+<main>
+    <section id="sofas">
+        <h2>Sofas</h2>
+        <div class="products">
+            <div class="product">
+                <img src="a1.jpg" alt="Modern Velvet Sofa">
+                <h3>Modern Velvet Sofa</h3>
+                <p>Price: $899</p>
+            </div>
+            <div class="product">
+                <img src="a2.jpg" alt="Leather Sectional Sofa">
+                <h3>Leather Sectional Sofa</h3>
+                <p>Price: $1299</p>
+            </div>
+            <div class="product">
+                <img src="a3.jpg" alt="Chesterfield Sofa">
+                <h3>Chesterfield Sofa</h3>
+                <p>Price: $999</p>
+            </div>
+            <div class="product">
+                <img src="a4.jpg" alt="Luxury Modern Sofa">
+                <h3>Luxury Modern Sofa</h3>
+                <p>Price: $1599</p>
+            </div>
+            <div class="product">
+                <img src="a5.jpg" alt="Mid-century Sofa">
+                <h3>Mid-century Sofa</h3>
+                <p>Price: $749</p>
+            </div>
+            <div class="product">
+                <img src="a6.jpg" alt="Classic Linen Sofa">
+                <h3>Classic Linen Sofa</h3>
+                <p>Price: $899</p>
+            </div>
+            <div class="product">
+                <img src="a7.jpg" alt="Convertible Sofa Bed">
+                <h3>Convertible Sofa Bed</h3>
+                <p>Price: $799</p>
+            </div>
+            <div class="product">
+                <img src="a8.jpg" alt="Reclining Sofa">
+                <h3>Reclining Sofa</h3>
+                <p>Price: $1200</p>
+            </div>
+            <div class="product">
+                <img src="a9.jpg" alt="Fabric Sofa">
+                <h3>Fabric Sofa</h3>
+                <p>Price: $899</p>
+            </div>
+            <div class="product">
+                <img src="a10.jpg" alt="Sofa with Chaise">
+                <h3>Sofa with Chaise</h3>
+                <p>Price: $1399</p>
+            </div>
+        </div>
+    </section>
+    <section id="armchairs">
+        <h2>Armchairs</h2>
+        <div class="products">
+            <div class="product">
+                <img src="b1.jpg" alt="Recliner Armchair">
+                <h3>Recliner Armchair</h3>
+                <p>Price: $399</p>
+            </div>
+            <div class="product">
+                <img src="b2.jpg" alt="Swivel Armchair">
+                <h3>Swivel Armchair</h3>
+                <p>Price: $499</p>
+            </div>
+            <div class="product">
+                <img src="b3.jpg" alt="Classic Wingback Armchair">
+                <h3>Classic Wingback Armchair</h3>
+                <p>Price: $649</p>
+            </div>
+            <div class="product">
+                <img src="b4.jpg" alt="Designer Armchair">
+                <h3>Designer Armchair</h3>
+                <p>Price: $799</p>
+            </div>
+            <div class="product">
+                <img src="b5.jpg" alt="Sporty Accent Chair">
+                <h3>Sporty Accent Chair</h3>
+                <p>Price: $399</p>
+            </div>
+            <div class="product">
+                <img src="b6.jpg" alt="Rocking Armchair">
+                <h3>Rocking Armchair</h3>
+                <p>Price: $279</p>
+            </div>
+            <div class="product">
+                <img src="b7.jpg" alt="Fabric Accent Chair">
+                <h3>Fabric Accent Chair</h3>
+                <p>Price: $349</p>
+            </div>
+            <div class="product">
+                <img src="b8.jpg" alt="Leather Recliner">
+                <h3>Leather Recliner</h3>
+                <p>Price: $499</p>
+            </div>
+            <div class="product">
+                <img src="b9.jpg" alt="Modern Accent Chair">
+                <h3>Modern Accent Chair</h3>
+                <p>Price: $399</p>
+            </div>
+            <div class="product">
+                <img src="b10.jpg" alt="Vintage Armchair">
+                <h3>Vintage Armchair</h3>
+                <p>Price: $599</p>
+            </div>
+        </div>
+    </section>
+    <section id="tables">
+        <h2>Tables</h2>
+        <div class="products">
+            <div class="product">
+                <img src="c1.jpg" alt="Wooden Dining Table">
+                <h3>Wooden Dining Table</h3>
+                <p>Price : $799</p>
+            </div>
+            <div class="product">
+                <img src="c2.jpg" alt="Glass Coffee Table">
+                <h3>Glass Coffee Table</h3>
+                <p>Price: $499</p>
+            </div>
+            <div class="product">
+                <img src="c3.jpg" alt="Modern Writing Desk">
+                <h3>Modern Writing Desk</h3>
+                <p>Price: $359</p>
+            </div>
+            <div class="product">
+                <img src="c4.jpg" alt="Compact Side Table">
+                <h3>Compact Side Table</h3>
+                <p>Price: $149</p>
+            </div>
+            <div class="product">
+                <img src="c5.jpg" alt="Extendable Dining Table">
+                <h3>Extendable Dining Table</h3>
+                <p>Price: $999</p>
+            </div>
+            <div class="product">
+                <img src="c6.jpg" alt="Round Glass Dining Table">
+                <h3>Round Glass Dining Table</h3>
+                <p>Price: $899</p>
+            </div>
+            <div class="product">
+                <img src="c7.jpg" alt="Industrial Style Desk">
+                <h3>Industrial Style Desk</h3>
+                <p>Price: $349</p>
+            </div>
+            <div class="product">
+                <img src="c8.jpg" alt="Solid Oak Coffee Table">
+                <h3>Solid Oak Coffee Table</h3>
+                <p>Price: $499</p>
+            </div>
+            <div class="product">
+                <img src="c9.jpg" alt="Luxury Dining Table">
+                <h3>Luxury Dining Table</h3>
+                <p>Price: $1999</p>
+            </div>
+            <div class="product">
+                <img src="c10.jpg" alt="Adjustable Office Desk">
+                <h3>Adjustable Office Desk</h3>
+                <p>Price: $429</p>
+            </div>
+            <div class="product">
+                <img src="c11.jpg" alt="Farmhouse Dining Table">
+                <h3>Farmhouse Dining Table</h3>
+                <p>Price: $1099</p>
+            </div>
+            <div class="product">
+                <img src="c12.jpg" alt="Mahogany Conference Table">
+                <h3>Mahogany Conference Table</h3>
+                <p>Price: $2499</p>
+            </div>
+            <div class="product">
+                <img src="c13.jpg" alt="Bistro Table">
+                <h3>Bistro Table</h3>
+                <p>Price: $299</p>
+            </div>
+            <div class="product">
+                <img src="c14.jpg" alt="Console Table">
+                <h3>Console Table</h3>
+                <p>Price: $399</p>
+            </div>
+        </div>
+    </section>
+    <section id="chairs">
+        <h2>Chairs</h2>
+        <div class="products">
+            <div class="product">
+                <img src="d1.jpg" alt="Wooden Dining Chair">
+                <h3>Wooden Dining Chair</h3>
+                <p>Price: $120</p>
+            </div>
+            <div class="product">
+                <img src="d2.jpg" alt="Ergonomic Office Chair">
+                <h3>Ergonomic Office Chair</h3>
+                <p>Price: $199</p>
+            </div>
+            <div class="product">
+                <img src="d3.jpg" alt="Modern Accent Chair">
+                <h3>Modern Accent Chair</h3>
+                <p>Price: $159</p>
+            </div>
+            <div class="product">
+                <img src="d4.jpg" alt="Rocking Chair">
+                <h3>Rocking Chair</h3>
+                <p>Price: $249</p>
+            </div>
+            <div class="product">
+                <img src="d5.jpg" alt="High-Back Office Chair">
+                <h3>High-Back Office Chair</h3>
+                <p>Price: $249</p>
+            </div>
+            <div class="product">
+                <img src="d6.jpg" alt="Dining Armchair">
+                <h3>Dining Armchair</h3>
+                <p>Price: $149</p>
+            </div>
+            <div class="product">
+                <img src="d7.jpg" alt="Vintage Leather Chair">
+                <h3>Vintage Leather Chair</h3>
+                <p>Price: $399</p>
+            </div>
+            <div class="product">
+                <img src="d8.jpg" alt="Bean Bag Chair">
+                <h3>Bean Bag Chair</h3>
+                <p>Price: $79</p>
+            </div>
+            <div class="product">
+                <img src="d9.jpg" alt="Accent Chair">
+                <h3>Accent Chair</h3>
+                <p>Price: $299</p>
+            </div>
+            <div class="product">
+                <img src="d10.jpg" alt="Folding Chair">
+                <h3>Folding Chair</h3>
+                <p>Price: $89</p>
+            </div>
+        </div>
+    </section>
+    <section id="beds">
+        <h2>Beds</h2>
+        <div class="products">
+            <div class="product">
+                <img src="e1.jpg" alt="Platform Bed">
+                <h3>Platform Bed</h3>
+                <p>Price: $599</p>
+            </div>
+            <div class="product">
+                <img src="e2.jpg" alt="Four-Poster Bed">
+                <h3>Four-Poster Bed</h3>
+                <p>Price: $1299</p>
+            </div>
+            <div class="product">
+                <img src="e3.jpg" alt="Upholstered Bed">
+                <h3>Upholstered Bed</h3>
+                <p>Price: $899</p>
+            </div>
+            <div class="product">
+                <img src="e4.jpg" alt="Bunk Bed">
+                <h3>Bunk Bed</h3>
+                <p>Price: $499</p>
+            </div>
+            <div class="product">
+                <img src="e5.jpg" alt="Daybed">
+                <h3>Daybed</h3>
+                <p>Price: $399</p>
+            </div>
+            <div class="product">
+                <img src="e6.jpg" alt="Sleigh Bed">
+                <h3>Sleigh Bed</h3>
+                <p>Price: $999</p>
+            </div>
+            <div class="product">
+                <img src="e7.jpg" alt="Storage Bed">
+                <h3>Storage Bed</h3>
+                <p>Price: $799</p>
+            </div>
+            <div class="product">
+                <img src="e8.jpg" alt="Canopy Bed">
+                <h3>Canopy Bed</h3>
+                <p>Price: $1199</p>
+            </div>
+            <div class="product">
+                <img src="e9.jpg" alt="Trundle Bed">
+                <h3>Trundle Bed</h3>
+                <p>Price: $699</p>
+            </div>
+            <div class="product">
+                <img src="e10.jpg" alt="Loft Bed">
+                <h3>Loft Bed</h3>
+                <p>Price: $599</p>
+            </div>
+        </div>
+    </section>
+    <section id="wardrobes">
+        <h2>Wardrobes</h2>
+        <div class="products">
+            <div class="product">
+                <img src="f1.jpg" alt="Sliding Door Wardrobe">
+                <h3>Sliding Door Wardrobe</h3>
+                <p>Price: $899</p>
+            </div>
+            <div class="product">
+                <img src="f2.jpg" alt="Freestanding Wardrobe">
+                <h3>Freestanding Wardrobe</h3>
+                <p>Price: $699</p>
+            </div>
+            <div class="product">
+                <img src="f3.jpg" alt="Mirrored Wardrobe">
+                <h3>Mirrored Wardrobe</h3>
+                <p>Price: $999</p>
+            </div>
+            <div class="product">
+                <img src="f4.jpg" alt="Corner Wardrobe">
+                <h3>Corner Wardrobe</h3>
+                <p>Price: $799</p>
+            </div>
+            <div class="product">
+                <img src="f5.jpg" alt="Walk-In Wardrobe">
+                <h3>Walk-In Wardrobe</h3>
+                <p>Price: $2499 </p>
+            </div>
+            <div class="product">
+                <img src="f6.jpg" alt="Wooden Wardrobe">
+                <h3>Wooden Wardrobe</h3>
+                <p>Price: $899</p>
+            </div>
+            <div class="product">
+                <img src="f7.jpg" alt="Modern Wardrobe">
+                <h3>Modern Wardrobe</h3>
+                <p>Price: $1099</p>
+            </div>
+            <div class="product">
+                <img src="f8.jpg" alt="Traditional Wardrobe">
+                <h3>Traditional Wardrobe</h3>
+                <p>Price: $999</p>
+            </div>
+            <div class="product">
+                <img src="f9.jpg" alt="Built-In Wardrobe">
+                <h3>Built-In Wardrobe</h3>
+                <p>Price: $1299</p>
+            </div>
+            <div class="product">
+                <img src="f10.jpg" alt="Fitted Wardrobe">
+                <h3>Fitted Wardrobe</h3>
+                <p>Price: $1499</p>
+            </div>
+        </div>
+    </section>
+    <section id="dining-sets">
+        <h2>Dining Sets</h2>
+        <div class="products">
+            <div class="product">
+                <img src="g1.jpg" alt="Modern Dining Set">
+                <h3>Modern Dining Set</h3>
+                <p>Price: $1299</p>
+            </div>
+            <div class="product">
+                <img src="g2.jpg" alt="Traditional Dining Set">
+                <h3>Traditional Dining Set</h3>
+                <p>Price: $1499</p>
+            </div>
+            <div class="product">
+                <img src="g3.jpg" alt="Rustic Dining Set">
+                <h3>Rustic Dining Set</h3>
+                <p>Price: $1399</p>
+            </div>
+            <div class="product">
+                <img src="g4.jpg" alt="Industrial Dining Set">
+                <h3>Industrial Dining Set</h3>
+                <p>Price: $1599</p>
+            </div>
+            <div class="product">
+                <img src="g5.jpg" alt="Farmhouse Dining Set">
+                <h3>Farmhouse Dining Set</h3>
+                <p>Price: $1699</p>
+            </div>
+            <div class="product">
+                <img src="g6.jpg" alt="Mid-Century Dining Set">
+                <h3>Mid-Century Dining Set</h3>
+                <p>Price: $1799</p>
+            </div>
+            <div class="product">
+                <img src="g7.jpg" alt="Scandinavian Dining Set">
+                <h3>Scandinavian Dining Set</h3>
+                <p>Price: $1899</p>
+            </div>
+            <div class="product">
+                <img src="g8.jpg" alt="Contemporary Dining Set">
+                <h3>Contemporary Dining Set</h3>
+                <p>Price: $1999</p>
+            </div>
+            <div class="product">
+                <img src="g9.jpg" alt="Vintage Dining Set">
+                <h3>Vintage Dining Set</h3>
+                <p>Price: $2099</p>
+            </div>
+            <div class="product">
+                <img src="g10.jpg" alt="Luxury Dining Set">
+                <h3>Luxury Dining Set</h3>
+                <p>Price: $2999</p>
+            </div>
+        </div>
+    </section>
+    <section id="living-sets">
+        <h2>Living Sets</h2>
+        <div class="products">
+            <div class="product">
+                <img src="h1.jpg" alt="Living Room Sofa Set">
+                <h3>Living Room Sofa Set</h3>
+                <p>Price: $2399</p>
+            </div>
+            <div class="product">
+                <img src="h2.jpg" alt="Coffee Table Set">
+                <h3>Coffee Table Set</h3>
+                <p>Price: $1499</p>
+            </div>
+            <div class="product">
+                <img src="h3.jpg" alt="Contemporary Living Set">
+                <h3>Contemporary Living Set</h3>
+                <p>Price: $1799</p>
+            </div>
+            <div class="product">
+                <img src="h4.jpg" alt="Luxury Velvet Sofa Set">
+                <h3>Luxury Velvet Sofa Set</h3>
+                <p>Price: $2999</p>
+            </div>
+            <div class="product">
+                <img src="h5.jpg" alt="Rustic Living Set">
+                <h3>Rustic Living Set</h3>
+                <p>Price: $2200</p>
+            </div>
+            <div class="product">
+                <img src="h6.jpg" alt="Minimalist Living Set">
+                <h3>Minimalist Living Set</h3>
+                <p>Price: $1599</p>
+            </div>
+            <div class="product">
+                <img src="h7.jpg" alt="Family Room Set">
+                <h3>Family Room Set</h3>
+                <p>Price: $2100</p>
+            </div>
+            <div class="product">
+                <img src="h8.jpg" alt="L Shaped Living Set">
+                <h3>L Shaped Living Set</h3>
+                <p>Price: $2499</p>
+            </div>
+            <div class="product">
+                <img src="h9.jpg" alt="Chic Living Set">
+                <h3>Chic Living Set</h3>
+                <p>Price: $1999</p>
+            </div>
+            <div class="product">
+                <img src="h10.jpg" alt="Traditional Living Set">
+                <h3>Traditional Living Set</h3>
+                <p>Price: $2399</p>
+            </div>
+        </div>
+    </section>
+    <section id="kitchen-sets">
+        <h2>Kitchen Sets</h2>
+        <div class="products">
+            <div class="product">
+                <img src="i1.jpg" alt="Modern Kitchen Cabinets">
+                <h3>Modern Kitchen Cabinets</h3>
+                <p>Price: $1999</p>
+            </div>
+            <div class="product">
+                <img src="i2.jpg" alt="Compact Kitchen Set">
+                <h3>Compact Kitchen Set</h3>
+                <p>Price: $1399</p>
+            </div>
+            <div class="product">
+                <img src="i3.jpg" alt="L-Shaped Kitchen Set">
+                <h3>L-Shaped Kitchen Set</h3>
+                <p>Price: $2499</p>
+            </div>
+            <div class="product">
+                <img src="i4.jpg" alt="Rustic Kitchen Cabinet">
+                <h3>Rustic Kitchen Cabinet</h3>
+                <p>Price: $1799</p>
+            </div>
+            <div class="product">
+                <img src="i5.jpg" alt="Modern Kitchen Island">
+                <h3>Modern Kitchen Island</h3>
+                <p>Price: $1499</p>
+            </div>
+            <div class="product">
+                <img src="i6.jpg" alt="Farmhouse Kitchen Set">
+                <h3>Farmhouse Kitchen Set</h3>
+                <p>Price: $1599</p>
+            </div>
+            <div class="product">
+                <img src="i7.jpg" alt="Classic White Kitchen Set">
+                <h3>Classic White Kitchen Set</h3>
+                <p>Price: $2399</p>
+            </div>
+            <div class="product">
+                <img src="i8.jpg" alt="Compact Cooking Station">
+                <h3>Compact Cooking Station</h3>
+                <p>Price: $1299</p>
+            </div>
+            </div>
+            <div class="product">
+                <img src="i9.jpg" alt="Modern Kitchen Set">
+                <h3>Modern Kitchen Set</h3>
+                <p>Price: $2199</p>
+            </div>
+            <div class="product">
+                <img src="i10.jpg" alt="Luxury Kitchen Set">
+                <h3>Luxury Kitchen Set</h3>
+                <p>Price: $2999</p>
+            </div>
+        </div>
+    </section>
+    
+    </section>
+    <section id="office-sets">
+        <h2>Office Sets</h2>
+        <div class="products">
+            <div class="product">
+                <img src="j1.jpg" alt="Executive Office Set">
+                <h3>Executive Office Set</h3>
+                <p>Price: $2499</p>
+            </div>
+            <div class="product">
+                <img src="j2.jpg" alt="Modern Office Set">
+                <h3>Modern Office Set</h3>
+                <p>Price: $1999</p>
+            </div>
+            <div class="product">
+                <img src="j3.jpg" alt="Home Office Set">
+                <h3>Home Office Set</h3>
+                <p>Price: $1499</p>
+            </div>
+            <div class="product">
+                <img src="j4.jpg" alt="Corner Office Set">
+                <h3>Corner Office Set</h3>
+                <p>Price: $1799</p>
+            </div>
+            <div class="product">
+                <img src="j5.jpg" alt="L-Shaped Office Set">
+                <h3>L-Shaped Office Set</h3>
+                <p>Price: $2199</p>
+            </div>
+            <div class="product">
+                <img src="j6.jpg" alt="Standing Desk Set">
+                <h3>Standing Desk Set</h3>
+                <p>Price: $1599</p>
+            </div>
+            <div class="product">
+                <img src="j7.jpg" alt="Minimalist Office Set">
+                <h3>Minimalist Office Set</h3>
+                <p>Price: $1399</p>
+            </div>
+            <div class="product">
+                <img src="j8.jpg" alt="Rustic Office Set">
+                <h3>Rustic Office Set</h3>
+                <p>Price: $1899</p>
+            </div>
+            <div class="product">
+                <img src="j9.jpg" alt="Industrial Office Set">
+                <h3>Industrial Office Set</h3>
+                <p>Price: $2099</p>
+            </div>
+            <div class="product">
+                <img src="j3.jpg" alt="Home Office Set">
+                <h3>Home Office Set</h3>
+                <p>Price: $1499</p>
+            </div>
+            <div class="product">
+                <img src="j4.jpg" alt="Corner Office Set">
+                <h3>Corner Office Set</h3>
+                <p>Price: $1799</p>
+            </div>
+            <div class="product">
+                <img src="j5.jpg" alt="L-Shaped Office Set">
+                <h3>L-Shaped Office Set</h3>
+                <p>Price: $2199</p>
+            </div>
+            <div class="product">
+                <img src="j6.jpg" alt="Standing Desk Set">
+                <h3>Standing Desk Set</h3>
+                <p>Price: $1599</p>
+            </div>
+            <div class="product">
+                <img src="j7.jpg" alt="Minimalist Office Set">
+                <h3>Minimalist Office Set</h3>
+                <p>Price: $1399</p>
+            </div>
+            <div class="product">
+                <img src="j8.jpg" alt="Rustic Office Set">
+                <h3>Rustic Office Set</h3>
+                <p>Price: $1899</p>
+            </div>
+            <div class="product">
+                <img src="j9.jpg" alt="Industrial Office Set">
+                <h3>Industrial Office Set</h3>
+                <p>Price: $2099</p>
+            </div>
+            <div class="product">
+                <img src="j10.jpg" alt="Luxury Office Set">
+                <h3>Luxury Office Set</h3>
+                <p>Price: $2999</p>
+            </div>
+        </div>
+    </section>
+    <section id="kids-sets">
+        <h2>Kids Sets</h2>
+        <div class="products">
+            <div class="product">
+                <img src="k1.jpg" alt="Kids Bunk Bed Set">
+                <h3>Kids Bunk Bed Set</h3>
+                <p>Price: $1299</p>
+            </div>
+            <div class="product">
+                <img src="k2.jpg" alt="Kids Study Set">
+                <h3>Kids Study Set</h3>
+                <p>Price: $999</p>
+            </div>
+            <div class="product">
+                <img src="k3.jpg" alt="Kids Play Table">
+                <h3>Kids Play Table</h3>
+                <p>Price: $199</p>
+            </div>
+            <div class="product">
+                <img src="k4.jpg" alt="Kids Chair and Table Set">
+                <h3>Kids Chair and Table Set</h3>
+                <p>Price: $150</p>
+            </div>
+            <div class="product">
+                <img src="k5.jpg" alt="Princess Tent Bed">
+                <h3>Princess Tent Bed</h3>
+                <p>Price: $399</p>
+            </div>
+            <div class="product">
+                <img src="k6.jpg" alt="Playhouse Bed">
+                <h3>Playhouse Bed</h3>
+                <p>Price: $599</p>
+            </div>
+            <div class="product">
+                <img src="k7.jpg" alt="Toy Organizer Set">
+                <h3>Toy Organizer Set</h3>
+                <p>Price: $199</p>
+            </div>
+            <div class="product">
+                <img src="k8.jpg" alt="Kids Storage Bench">
+                <h3>Kids Storage Bench</h3>
+                <p>Price: $249</p>
+            </div>
+            <div class="product">
+                <img src="k9.jpg" alt="Kids Bedroom Set">
+                <h3>Kids Bedroom Set</h3>
+                <p>Price: $799</p>
+            </div>
+            <div class="product">
+                <img src="k10.jpg" alt="Kids Desk Set">
+                <h3>Kids Desk Set</h3>
+                <p>Price: $299</p>
+            </div>
+        </div>
+    </section>
+    <section id="outdoor-sets">
+        <h2>Outdoor Sets</h2>
+        <div class="products">
+            <div class="product">
+                <img src="l1.jpg" alt="Outdoor Dining Set">
+                <h3>Outdoor Dining Set</h3>
+                <p>Price: $1299</p>
+            </div>
+            <div class="product">
+                <img src="l2.jpg" alt="Patio Lounge Set">
+                <h3>Patio Lounge Set</h3>
+                <p>Price: $1499</p>
+            </div>
+            <div class="product">
+                <img src="l3.jpg" alt="Garden Sofa Set">
+                <h3>Garden Sofa Set</h3>
+                <p>Price: $1799</p>
+            </div>
+            <div class="product">
+                <img src="l4.jpg" alt="Portable Camping Table">
+                <h3>Portable Camping Table</h3>
+                <p>Price: $199</p>
+            </div>
+            <div class="product">
+                <img src="l5.jpg" alt="Fire Pit Set">
+                <h3>Fire Pit Set</h3>
+                <p>Price: $899</p>
+            </div>
+            <div class="product">
+                <img src="l6.jpg" alt="Outdoor Chaise Lounge">
+                <h3>Outdoor Chaise Lounge</h3>
+                <p>Price: $349</p>
+            </div>
+            <div class="product">
+                <img src="l7.jpg" alt="Deck Chair Set">
+                <h3>Deck Chair Set</h3>
+                <p>Price: $299</p>
+            </div>
+            <div class="product">
+                <img src="l8.jpg" alt="Patio Umbrella Set">
+                <h3>Patio Umbrella Set</h3>
+                <p>Price: $249</p>
+            </div>
+            <div class="product">
+                <img src="l9.jpg" alt="Outdoor Coffee Table">
+                <h3>Outdoor Coffee Table</h3>
+                <p>Price: $399</p>
+            </div>
+            <div class="product">
+                <img src="l10.jpg" alt="Garden Bench">
+                <h3>Garden Bench</h3>
+                <p>Price: $499</p>
+            </div>
+        </div>
+    </section>
+    <section id="bedroom-sets">
+        <h2>Bedroom Sets</h2>
+        <div class="products">
+            <div class="product">
+                <img src="m1.jpg" alt="Complete Bedroom Set">
+                <h3>Complete Bedroom Set</h3>
+                <p>Price: $2499</p>
+            </div>
+            <div class="product">
+                <img src="m2.jpg" alt="Minimalist Bedroom Set">
+                <h3>Minimalist Bedroom Set</h3>
+                <p>Price: $1599</p>
+            </div>
+            <div class="product">
+                <img src="m3.jpg" alt="Rustic Bedroom Set">
+                <h3>Rustic Bedroom Set</h3>
+                <p>Price: $1899</p>
+            </div>
+            <div class="product">
+                <img src="m4.jpg" alt="Luxury Bedroom Set">
+                <h3>Luxury Bedroom Set</h3>
+                <p>Price: $2999</p>
+            </div>
+            <div class="product">
+                <img src="m5.jpg" alt="Classic Bedroom Set">
+                <h3>Classic Bedroom Set</h3>
+                <p>Price: $2199</p>
+            </div>
+            <div class="product">
+                <img src="m6.jpg" alt="Contemporary Bedroom Set">
+                <h3>Contemporary Bedroom Set</h3>
+                <p>Price: $1999</p>
+            </div>
+            <div class="product">
+                <img src="m7.jpg" alt="Sleek Bedroom Set">
+                <h3>Sleek Bedroom Set</h3>
+                <p>Price: $1799</p>
+            </div>
+            <div class="product">
+                <img src="m8.jpg" alt="Family Bedroom Set">
+                <h3>Family Bedroom Set</h3>
+                <p>Price: $2299</p>
+            </div>
+            <div class="product">
+                <img src="m9.jpg" alt="Kids Bedroom Set">
+                <h3>Kids Bedroom Set</h3>
+                <p>Price: $899</p>
+            </div>
+            <div class="product">
+                <img src="m10.jpg" alt="Storage Bed">
+                <h3>Storage Bed</h3>
+                <p>Price: $1399</p>
+            </div>
+        </div>
+    </section>
+    <section id="bathroom-sets">
+        <h2>Bathroom Sets</h2>
+        <div class="products">
+            <div class="product">
+                <img src="n1.jpg" alt="Bathroom Vanity Set">
+                <h3>Bathroom Vanity Set</h3>
+                <p>Price: $799</p>
+            </div>
+            <div class="product">
+                <img src="n2.jpg" alt="Wall-Mounted Cabinet">
+                <h3>Wall-Mounted Bathroom Cabinet</h3>
+                <p>Price: $299</p>
+            </div>
+            <div class="product">
+                <img src="n3.jpg" alt="Freestanding Bathtub">
+                <h3>Freestanding Bathtub</h3>
+                <p>Price: $1599</p>
+            </div>
+            <div class="product">
+                <img src="n4.jpg" alt="Mirrored Cabinet">
+                <h3>Mirrored Cabinet</h3>
+                <p>Price: $499</p>
+            </div>
+            <div class="product">
+                <img src="n5.jpg" alt="Shower Caddy">
+                <h3>Shower Caddy</h3>
+                <p>Price: $59</p>
+            </div>
+            <div class="product">
+                <img src="n6.jpg" alt="Bathroom Rug Set">
+                <h3>Bathroom Rug Set</h3>
+                <p>Price: $79</p>
+            </div>
+            <div class="product">
+                <img src="n7.jpg" alt="Towel Rack">
+                <h3>Towel Rack</h3>
+                <p>Price: $129</p>
+            </div>
+            <div class="product">
+                <img src="n8.jpg" alt="Toilet Storage Cabinet">
+                <h3>Toilet Storage Cabinet</h3>
+                <p>Price: $149</p>
+            </div>
+            <div class="product">
+                <img src="n9.jpg" alt="Bathroom Shelf">
+                <h3>Bathroom Shelf</h3>
+                <p>Price: $199</p>
+            </div>
+            <div class="product">
+                <img src="n10.jpg" alt="Bathtub Tray">
+                <h3>Bathtub Tray</h3>
+                <p>Price: $89</p>
+            </div>
+        </div>
+
+    </section>
+    <section id="living-room-sets">
+        <h2>Living Room Sets</h2>
+        <div class="products">
+            <div class="product">
+                <img src="o1.jpg" alt="Luxury Living Room Set">
+                <h3>Luxury Living Room Set</h3>
+                <p>Price: $2999</p>
+            </div>
+            <div class="product">
+                <img src="o2.jpg" alt="Contemporary Living Room Set">
+                <h3>Contemporary Living Room Set</h3>
+                <p>Price: $1999</p>
+            </div>
+            <div class="product">
+                <img src="o3.jpg" alt="Classic Living Room Set">
+                <h3>Classic Living Room Set</h3>
+                <p>Price: $2299</p>
+            </div>
+            <div class="product">
+                <img src="o4.jpg" alt="Minimalist Living Room Set">
+                <h3>Minimalist Living Room Set</h3>
+                <p>Price: $1799</p>
+            </div>
+            <div class="product">
+                <img src="o5.jpg" alt="Mid Century Living Room Set">
+                <h3>Mid Century Living Room Set</h3>
+                <p>Price: $2399</p>
+            </div>
+            <div class="product">
+                <img src="o6.jpg" alt="Art Deco Living Room Set">
+                <h3>Art Deco Living Room Set</h3>
+                <p>Price: $2899</p>
+            </div>
+            <div class="product">
+                <img src="o7.jpg" alt="Rustic Living Room Set">
+                <h3>Rustic Living Room Set</h3>
+                <p>Price: $2199</p>
+            </div>
+            <div class="product">
+                <img src="o8.jpg" alt="Scandinavian Style Living Room Set">
+                <h3>Scandinavian Style Living Room Set</h3>
+                <p>Price: $1899</p>
+            </div>
+            <div class="product">
+                <img src="o9.jpg" alt="Cozy Living Room Set">
+                <h3>Cozy Living Room Set</h3>
+                <p>Price: $1999</p>
+            </div>
+            <div class="product">
+                <img src="o10.jpg" alt="Elegant Living Room Set">
+                <h3>Elegant Living Room Set</h3>
+                <p>Price: $2499</p>
+            </div>
+        </div>
+    </section>
+    <section id="dining-room-sets">
+        <h2>Dining Room Sets</h2>
+        <div class="products">
+            <div class="product">
+                <img src="p1.jpg" alt="Formal Dining Room Set">
+                <h3>Formal Dining Room Set</h3>
+                <p>Price: $1599</p>
+            </div>
+            <div class="product">
+                <img src="p2.jpg" alt="Rustic Dining Room Set">
+                <h3>Rustic Dining Room Set</h3>
+                <p>Price: $1399</p>
+            </div>
+            <div class="product">
+                <img src="p3.jpg" alt="Elegant Dining Room Set">
+                <h3>Elegant Dining Room Set</h3>
+                <p>Price: $1699</p>
+            </div>
+            <div class="product">
+                <img src="p4.jpg" alt="Country Dining Room Set">
+                <h3>Country Dining Room Set</h3>
+                <p>Price: $1499</p>
+            </div>
+            <div class="product">
+                <img src="p5.jpg" alt="Classic Oak Dining Room Set">
+                <h3>Classic Oak Dining Room Set</h3>
+                <p>Price: $1799</p>
+            </div>
+            <div class="product">
+                <img src="p6.jpg" alt="Modern Glass Dining Room Set">
+                <h3>Modern Glass Dining Room Set</h3>
+                <p>Price: $1899</p>
+            </div>
+            <div class="product">
+                <img src="p7.jpg" alt="Mid Century Dining Room Set">
+                <h3>Mid Century Dining Room Set</h3>
+                <p>Price: $1599</p>
+            </div>
+            <div class="product">
+                <img src="p8.jpg" alt="Industrial Dining Room Set">
+                <h3>Industrial Dining Room Set</h3>
+                <p>Price: $1999</p>
+            </div>
+            <div class="product">
+                <img src="p9.jpg" alt="Contemporary Dining Room Set">
+                <h3>Contemporary Dining Room Set</h3>
+                <p>Price: $1799</p>
+            </div>
+            <div class="product">
+                <img src="p10.jpg" alt="Elegant Round Dining Set">
+                <h3>Elegant Round Dining Set</h3>
+                <p>Price: $1399</p>
+            </div>
+        </div>
+    </section>  
+    
+    <section id="contact-us">
+        <h2>Contact Us</h2>
+        <div class="content-placeholder">
+            <p>If you have any questions or inquiries, feel free to reach out to us!</p>
+            <p>Email: info@cozycornerfurniture.com</p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+    </section>
+
+    <section id="locate-us">
+        <h2>Locate Us</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387190.2799010523!2d-74.2598746874519!3d40.69767006351044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a1c1c1c1c1c%3A0x1c1c1c1c1c1c1c1!2sPoblacion%2C%20Ilawod%2C%20Ladrido%20Street%2C%20Lambunao%2C%20Iloilo!5e0!3m2!1sen!2sph!4v1631234567890!5m2!1sen!2sph" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <p>Visit us at: Poblacion, Ilawod, Ladrido Street, Lambunao, Iloilo</p>
+    </section>
+    
+    <section id="about-us">
+        <h2>About Us</h2>
+        <div class="about-section">
+            <div class="about-card">
+                <img src="om.jpg" alt="Our Mission">
+                <h3>Our Mission</h3>
+                <p>At Cozy Corner Furniture, our mission is to provide high-quality furniture that enhances the beauty and comfort of your home. We believe in creating spaces that reflect your unique style.</p>
+            </div>
+            <div class="about-card">
+                <img src="arjay.jpg" alt="Quality Craftsmanship">
+                <h3>Quality Craftsmanship</h3>
+                <p>My name is arjay arcenal , We take pride in our craftsmanship, using only the finest materials to ensure durability and elegance in every piece of furniture we offer.</p>
+            </div>
+            <div class="about-card">
+                <img src="gr.jpg" alt="Sustainable Practices">
+                <h3>Sustainable Practices</h3>
+                <p>My name is gr sabagay,We are committed to sustainability, sourcing materials responsibly and ensuring our production processes are environmentally friendly.</p>
+            </div>
+            <div class="about-card">
+                <img src="guian.jpg" alt="Customer Satisfaction">
+                <h3>Customer Satisfaction</h3>
+                <p>My name is guian latoza ,Your satisfaction is our priority. We strive to provide exceptional customer service and support to help you find the perfect furniture for your home.</p>
+            </div>
+            <div class="about-card">
+                <img src="renz.jpg" alt="Innovative Designs">
+                <h3>Innovative Designs</h3>
+                <p>my name is renz gerald clanes ,Our team of designers is dedicated to creating innovative and stylish furniture that meets the needs of modern living while maintaining a timeless appeal.</p>
+            </div>
+            <div class="about-card">
+                <img src="cm.jpg" alt="Community Engagement">
+                <h3>Community Engagement</h3>
+                <p>We believe in giving back to the community. Through various initiatives, we support local charities and organizations to make a positive impact.</p>
+            </div>
+            <div class="about-card">
+                <img src="ea.jpg" alt="Expert Guidance">
+                <h3>Expert Guidance</h3>
+                <p>Our knowledgeable staff is here to provide expert guidance and advice, ensuring you make informed decisions when selecting furniture for your home.</p>
+            </div>
+            <div class="about-card">
+                <img src="t.jpg" alt="Customer Testimonials">
+                <h3>Customer Testimonials</h3>
+                <p>We value our customers' feedback. Hear from our satisfied clients about their experiences and how our furniture has transformed their spaces.</p>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>Cozy Corner Furniture.</p>
+</footer>
+<script>
+    const links = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('section');
+
+    function hideAllSections() {
+        sections.forEach(section => section.classList.remove('active'));
+    }
+
+    function showSection(sectionId) {
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) targetSection.classList.add('active');
+    }
+
+    links.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const sectionId = link.getAttribute('href').substring(1);
+            hideAllSections();
+            showSection(sectionId);
+        });
+    });
+    document.getElementById('sofas').classList.add('active');
+</script>
+</body>
+</html>
